@@ -5,7 +5,7 @@ import datasource
 app = Flask(__name__)
 @app.route("/")
 def index():
-    stock_data = datasource.get_stock_data(stockid=1513) # roberthsu 2330 (自己用1513中興電)
+    stock_data = datasource.get_stock_data(stockid=1503) # roberthsu 2330 (自己用1513中興電)
     return render_template("index.jinja.html",data=stock_data)
 
 

@@ -10,15 +10,15 @@
 <div class="container-md">
         <div class="table-responsive" style="max-height: 400px; overflow-y: scroll;">
                 <table class="table caption-top">
-                        <caption>中興電</caption> <!--徐老師 2303 聯電-->
+                        <caption>士電</caption>
                         <thead>
                                 <tr>
                                         <th>日期</th>
                                         <th>開盤</th>
                                         <th>最高</th>
                                         <th>最低</th>
-                                        <th>收盤價</th>
-                                        <th>調整後收盤</th>
+                                        <th>收盤1</th>
+                                        <th>收盤2</th>
                                         <th>成交量</th>
                                 </tr>
 
@@ -33,6 +33,7 @@
                                         <td>{{ "{:,d}".format(item) }}</td>
                                         {% else %}
                                         <td>{{ "{:.2f}".format(item) }}</td>
+
                                         {% endif %}
                                         {% endfor %}
                                 </tr>
@@ -40,5 +41,6 @@
                         </tbody>
                 </table>
         </div>
+
 </div>
 {% endblock %}
