@@ -5,7 +5,7 @@ import datasource
 app = Flask(__name__)
 @app.route("/")
 def index():
-    stock_data = datasource.get_stock_data(stockid=1513)  # roberthsu 2330 (自己用1513中興電)  
+    stock_data = datasource.get_stock_data(stockid=2330)    
     return render_template("index.jinja.html",data=stock_data)
 
 
@@ -26,10 +26,10 @@ def about():
 @app.route("/form/",methods=['GET', 'POST'])
 def form():
     if request.method == 'POST':
-        print(f"{request.form['username']},這是post,您好")
         return render_template("form.jinja.html")
-    elif request.method  == 'GET':
-        return render_template("form.jinja.html")
+    
+    rows = datasource.get_stockid()
+    return render_template("form.jinja.html",rows=rows)
     
 
 
