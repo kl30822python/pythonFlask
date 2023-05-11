@@ -17,6 +17,7 @@ def get_stock_data(stockid):
     current_date = datetime.now()    
     filename = f"{stockid_str}_{current_date.year}_{current_date.month}_{current_date.day}.csv"
     csv_file_path = os.path.join(current,'data',filename)
+
     if not os.path.exists(csv_file_path):
         stock_dataFrame = pdr.get_data_yahoo(stockid_str)
         stock_dataFrame.to_csv(csv_file_path)

@@ -23,8 +23,7 @@ def priceing():
 def about():
     return render_template("about.jinja.html")
 
+@app.route("/form/",methods=['GET', 'POST'])
+def form():
 
-
-
-
-    
+    return render_template("form.jinja.html")
